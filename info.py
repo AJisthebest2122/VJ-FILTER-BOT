@@ -11,8 +11,8 @@ id_pattern = re.compile(r'^.\d+$')
 
 # Bot information
 SESSION = environ.get('SESSION', 'TechVJBot')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
+API_ID = int(environ.get('API_ID', '20508615'))
+API_HASH = environ.get('API_HASH', 'ba1498a08d15f960be4c5db8ecca22ae')
 BOT_TOKEN = environ.get('BOT_TOKEN', "")
 
 
@@ -21,15 +21,15 @@ PICS = (environ.get('PICS', 'https://graph.org/file/ce1723991756e48c35aa1.jpg'))
 
 
 # Admins & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()] # For Multiple Id Use One Space Between Each.
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7202724594').split()] # For Multiple Id Use One Space Between Each.
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]  # For Multiple Id Use One Space Between Each.
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 
 # This Channel Is For When User Start Your Bot Then Bot Send That User Name And Id In This Log Channel, Same For Group Also.
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002619708020'))
 
 # This Is File Channel Where You Upload Your File Then Bot Automatically Save It In Database 
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]  # For Multiple Id Use One Space Between Each.
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002640068354 -1002598224860 -1002406402473 -1002573533031 ').split()]  # For Multiple Id Use One Space Between Each.
 
 # auth_channel means force subscribe channel.
 # if REQUEST_TO_JOIN_MODE is true then force subscribe work like request to join fsub, else if false then work like normal fsub.
@@ -59,7 +59,7 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")   # IF Multiple Database Is False Then Fill Only This Database Url.
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://snowie2122:snowie@filetolink.7imij.mongodb.net/?retryWrites=true&w=majority&appName=Filetolink")   # IF Multiple Database Is False Then Fill Only This Database Url.
 DATABASE_NAME = environ.get('DATABASE_NAME', "techvjclonefilterbot")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'vjcollection')
 
@@ -72,7 +72,7 @@ S_DB_URI = environ.get('S_DB_URI', "")   # This Db is for File Data Store When F
 
 
 # Premium And Referal Settings
-PREMIUM_AND_REFERAL_MODE = bool(environ.get('PREMIUM_AND_REFERAL_MODE', True)) # Set Ture Or False
+PREMIUM_AND_REFERAL_MODE = bool(environ.get('PREMIUM_AND_REFERAL_MODE', False)) # Set Ture Or False
 
 # If PREMIUM_AND_REFERAL_MODE is True Then Fill Below Variable, If Flase Then No Need To Fill.
 REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '20')) # number of referal count
@@ -88,10 +88,10 @@ PUBLIC_FILE_CHANNEL = environ.get('PUBLIC_FILE_CHANNEL', '') # Public Channel Us
 
 
 # Links
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/vj_bot_disscussion')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/vj_botz')
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'vj_bot_disscussion') # Support Chat Link Without https:// or @
-OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/kingvj01')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/downloaderzonefreemirrorleech')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/DOWNLOADERZONEUPDATES')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'DZONEDISCUSSION') # Support Chat Link Without https:// or @
+OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/ANSHtheGENIOUS')
 
 # True Or False
 AI_SPELL_CHECK = bool(environ.get('AI_SPELL_CHECK', True))
@@ -112,9 +112,9 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 
 # Token Verification Info :
-VERIFY = bool(environ.get('VERIFY', False))
-VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', '')
-VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', '')
+VERIFY = bool(environ.get('VERIFY', True))
+VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', 'papajiurl.com')
+VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', 'a5f363bebec3e3ddf5c49b11f147638a68fdcc5f')
 VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', '')
 
 # If You Fill Second Shortner Then Bot Attach Both First And Second Shortner And Use It For Verify.
