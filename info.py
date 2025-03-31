@@ -41,7 +41,7 @@ auth_channel = environ.get('AUTH_CHANNEL', '-1002634896858') # give your force s
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 
 # This Channel Is For When User Request Any File Name With command or hashtag like - /request or #request
-reqst_channel = environ.get('REQST_CHANNEL', '-1002634896858')
+reqst_channel = environ.get('REQST_CHANNEL', '')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 
 # This Channel Is For Index Request 
@@ -52,7 +52,7 @@ support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002201458256')
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 
 # This Channel Is For /batch command file store.
-FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1002634896858')).split()]  # For Multiple Id Use One Space Between Each.
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]  # For Multiple Id Use One Space Between Each.
 
 # This Channel Is For Delete Index File, Forward Your File In This Channel Which You Want To Delete Then Bot Automatically Delete That File From Database.
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-1002634896858').split()]  # For Multiple Id Use One Space Between Each.
@@ -112,10 +112,10 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 
 # Token Verification Info :
-VERIFY = bool(environ.get('VERIFY', False))
+VERIFY = bool(environ.get('VERIFY', True))
 VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', 'papajiurl.com')
 VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', 'a5f363bebec3e3ddf5c49b11f147638a68fdcc5f')
-VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', '')
+VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', 'https://t.me/filtergroupupdates/24')
 
 # If You Fill Second Shortner Then Bot Attach Both First And Second Shortner And Use It For Verify.
 VERIFY_SECOND_SHORTNER = bool(environ.get('VERIFY_SECOND_SHORTNER', False))
